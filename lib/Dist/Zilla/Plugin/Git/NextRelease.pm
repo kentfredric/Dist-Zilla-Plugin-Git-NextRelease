@@ -26,7 +26,7 @@ This exists mostly because of my extensive use of L<< C<[Git::CommitBuild]>|Dist
 
 =cut
 
-use Git::Wrapper::Plus;
+use Git::Wrapper::Plus 0.003100;    # Fixed shallow commits
 use DateTime;
 
 use String::Formatter 0.100680 stringf => {
