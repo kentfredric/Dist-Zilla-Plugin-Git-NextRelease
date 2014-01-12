@@ -92,7 +92,7 @@ sub _build__git_timestamp {
   my $sha1 = $branch->sha1;
   my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } $self->_gwp->git->cat_file( 'commit', $sha1 );
   chomp $committer;
-  if ( $committer =~ qr/\s+([0-9]+)\s+(\S+)$/ ) {
+  if ( $committer =~ qr/\s+(\d+)\s+(\S+)\z/msx ) {
     return DateTime->from_epoch( epoch => $1, time_zone => $2 );
   }
   return $self->log_fatal( [ q[Could not parse timestamp and timezone from string <%s>], $committer ] );
