@@ -46,10 +46,10 @@ use String::Formatter 0.100680 stringf => {
     E => sub { $_[0]->_user_info('email') },
     U => sub { $_[0]->_user_info('name') },
     T => sub {
-      $_[0]->zilla->is_trial ? ( defined $_[1] ? $_[1] : '-TRIAL' ) : '';
+      $_[0]->zilla->is_trial ? ( defined $_[1] ? $_[1] : '-TRIAL' ) : q[];
     },
     V => sub {
-      $_[0]->zilla->version . ( $_[0]->zilla->is_trial ? ( defined $_[1] ? $_[1] : '-TRIAL' ) : '' );
+      $_[0]->zilla->version . ( $_[0]->zilla->is_trial ? ( defined $_[1] ? $_[1] : '-TRIAL' ) : q[] );
     },
   },
 };
@@ -71,15 +71,14 @@ has '_gwp' => (
 
 sub _build__gwp {
   my ($self) = @_;
-  return Git::Wrapper::Plus->new( '' . $self->zilla->root );
+  return Git::Wrapper::Plus->new( q[] . $self->zilla->root );
 }
 
 sub _build_branch {
   my ($self) = @_;
   my $cb = $self->_gwp->branches->current_branch;
   if ( not $cb ) {
-    $self->log_fatal("Cannot determine branch to get timestamp from when not on a branch");
-    die;
+    $self->log_fatal(q[Cannot determine branch to get timestamp from when not on a branch]);
   }
   return $cb->name;
 }
@@ -88,7 +87,7 @@ sub _build__git_timestamp {
   my ($self) = @_;
   my ( $branch, ) = $self->_gwp->branches->get_branch( $self->branch );
   if ( not $branch ) {
-    $self->log_fatal( [ "Branch %s does not exist" . $self->branch ] );
+    $self->log_fatal( [ q[Branch %s does not exist], $self->branch ] );
   }
   my $sha1 = $branch->sha1;
   my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } $self->_gwp->git->cat_file( 'commit', $sha1 );
@@ -96,7 +95,7 @@ sub _build__git_timestamp {
   if ( $committer =~ qr/\s+([0-9]+)\s+(\S+)$/ ) {
     return DateTime->from_epoch( epoch => $1, time_zone => $2 );
   }
-  return $self->log_fatal( [ "Could not parse timestamp and timezone from string <%s>", $committer ] );
+  return $self->log_fatal( [ q[Could not parse timestamp and timezone from string <%s>], $committer ] );
 }
 
 sub section_header {
