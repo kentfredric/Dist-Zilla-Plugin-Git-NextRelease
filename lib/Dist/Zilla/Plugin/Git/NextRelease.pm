@@ -1,4 +1,4 @@
-use 5.008; # utf8
+use 5.008;    # utf8
 use strict;
 use warnings;
 use utf8;
@@ -154,7 +154,7 @@ Optionally:
     +branch = master
 
 This exists mostly because of my extensive use of L<< C<[Git::CommitBuild]>|Dist::Zilla::Plugin::Git::CommitBuild >>, to provide
-a commit series for both releases, and builds of all changes/commits in order to push them to Travis for testing. ( Mostly, 
+a commit series for both releases, and builds of all changes/commits in order to push them to Travis for testing. ( Mostly,
 because testing a build branch is substantially faster than testing a master that requires C<Dist::Zilla>, especially if you're
 doing "Fresh install" testing like I am. )
 
