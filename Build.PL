@@ -29,8 +29,9 @@ my %module_build_args = (
     "Git::Wrapper::Plus" => "0.003100",
     "Moose" => 0,
     "String::Formatter" => "0.100680",
-    "perl" => "5.006",
+    "perl" => "5.008",
     "strict" => 0,
+    "utf8" => 0,
     "warnings" => 0
   },
   "script_files" => [],
