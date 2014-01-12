@@ -1,6 +1,10 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+ [Bugfix]
+ - Bump to force a fixed Git::Wrapper::Plus with shallow repo fails.
+ - Also to finish bootstapping
+
  [Dependencies::Stats]
  - Dependencies changed since 0.001000, see Changes.deps{,.all,.dev} for
    details
