@@ -87,6 +87,7 @@ sub _build__git_timestamp {
   return $self->log_fatal( [ q[Could not parse timestamp and timezone from string <%s>], $committer ] );
 }
 
+
 sub section_header {
   my ($self) = @_;
 
@@ -126,6 +127,15 @@ Optionally:
     +branch = master
 
 This exists mostly because of my extensive use of L<< C<[Git::CommitBuild]>|Dist::Zilla::Plugin::Git::CommitBuild >>, to provide a commit series for both releases, and builds of all changes/commits in order to push them to Travis for testing. ( Mostly, because testing a build branch is substantially faster than testing a master that requires C<Dist::Zilla>, especially if you're doing "Fresh install" testing like I am. )
+
+=head1 METHODS
+
+=head2 C<section_header>
+
+This is the sole method of L<< C<[NextRelease]>|Dist::Zilla::Plugin::NextRelease >> that we override,
+in order for it to inject the right things.
+
+This method basically returns the date string to append to the Changes header.
 
 =head1 AUTHOR
 

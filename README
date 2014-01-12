@@ -27,6 +27,14 @@ SYNOPSIS
     master that requires "Dist::Zilla", especially if you're doing "Fresh
     install" testing like I am. )
 
+METHODS
+  "section_header"
+    This is the sole method of "[NextRelease]" that we override, in order
+    for it to inject the right things.
+
+    This method basically returns the date string to append to the Changes
+    header.
+
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 
