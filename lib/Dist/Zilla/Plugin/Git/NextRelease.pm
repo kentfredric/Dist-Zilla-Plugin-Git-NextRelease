@@ -1,21 +1,40 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Plugin::Git::NextRelease;
 BEGIN {
   $Dist::Zilla::Plugin::Git::NextRelease::AUTHORITY = 'cpan:KENTNL';
 }
-{
-  $Dist::Zilla::Plugin::Git::NextRelease::VERSION = '0.001000';
-}
-
+$Dist::Zilla::Plugin::Git::NextRelease::VERSION = '0.001001';
 # ABSTRACT: Use time-stamp from Git instead of process start time.
 
-use Moose;
+use Moose qw( extends has );
 extends 'Dist::Zilla::Plugin::NextRelease';
 
 
-use Git::Wrapper::Plus;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use Git::Wrapper::Plus 0.003100;    # Fixed shallow commits
 use DateTime;
 
 use String::Formatter 0.100680 stringf => {
@@ -78,14 +97,22 @@ sub _build__git_timestamp {
   if ( not $branch ) {
     $self->log_fatal( [ q[Branch %s does not exist], $self->branch ] );
   }
-  my $sha1 = $branch->sha1;
-  my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } $self->_gwp->git->cat_file( 'commit', $sha1 );
+  my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } $self->_gwp->git->cat_file( 'commit', $branch->sha1 );
   chomp $committer;
+  ## no critic ( Compatibility::PerlMinimumVersionAndWhy )
   if ( $committer =~ qr/\s+(\d+)\s+(\S+)\z/msx ) {
     return DateTime->from_epoch( epoch => $1, time_zone => $2 );
   }
   return $self->log_fatal( [ q[Could not parse timestamp and timezone from string <%s>], $committer ] );
 }
+
+
+
+
+
+
+
+
 
 
 sub section_header {
@@ -110,7 +137,7 @@ Dist::Zilla::Plugin::Git::NextRelease - Use time-stamp from Git instead of proce
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 
@@ -126,7 +153,10 @@ Optionally:
 
     +branch = master
 
-This exists mostly because of my extensive use of L<< C<[Git::CommitBuild]>|Dist::Zilla::Plugin::Git::CommitBuild >>, to provide a commit series for both releases, and builds of all changes/commits in order to push them to Travis for testing. ( Mostly, because testing a build branch is substantially faster than testing a master that requires C<Dist::Zilla>, especially if you're doing "Fresh install" testing like I am. )
+This exists mostly because of my extensive use of L<< C<[Git::CommitBuild]>|Dist::Zilla::Plugin::Git::CommitBuild >>, to provide
+a commit series for both releases, and builds of all changes/commits in order to push them to Travis for testing. ( Mostly,
+because testing a build branch is substantially faster than testing a master that requires C<Dist::Zilla>, especially if you're
+doing "Fresh install" testing like I am. )
 
 =head1 METHODS
 

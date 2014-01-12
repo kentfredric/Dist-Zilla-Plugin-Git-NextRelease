@@ -1,0 +1,17 @@
+0.001001
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Git::NextRelease
+
+ [Added / runtime requires]
+ - utf8
+
+ [Changed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.007003 → 2.008000
+
+ [Changed / runtime requires]
+ - Git::Wrapper::Plus 0 → 0.003100
+ - perl 5.006 → 5.008
+
+ [Removed / develop requires]
+ - Dist::Zilla::Plugin::NextRelease
+
