@@ -98,6 +98,15 @@ sub _build__git_timestamp {
   return $self->log_fatal( [ q[Could not parse timestamp and timezone from string <%s>], $committer ] );
 }
 
+=method C<section_header>
+
+This is the sole method of L<< C<[NextRelease]>|Dist::Zilla::Plugin::NextRelease >> that we override,
+in order for it to inject the right things.
+
+This method basically returns the date string to append to the Changes header.
+
+=cut
+
 sub section_header {
   my ($self) = @_;
 
