@@ -62,7 +62,7 @@ $t->run_env(
             next if $file->name ne 'Changes';
             like(
                 $file->encoded_content,
-                qr/0.01\s+2014-01-01\s+00:00:00\+00:00\s+UTC/,
+                qr/0.01\s+2014-01-01\s+00:00:00/,
                 "Specified commit timestamp in changelog"
             );
         }
