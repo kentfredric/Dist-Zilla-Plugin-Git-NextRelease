@@ -9,6 +9,9 @@ MANIFEST
 META.json
 META.yml
 README
+corpus/fake_dist_01/Changes
+corpus/fake_dist_01/dist.ini
+corpus/fake_dist_01/lib/E.pm
 dist.ini
 lib/Dist/Zilla/Plugin/Git/NextRelease.pm
 maint-travis-ci/README.mkdn
