@@ -5,17 +5,31 @@ package Dist::Zilla::Plugin::Git::NextRelease;
 BEGIN {
   $Dist::Zilla::Plugin::Git::NextRelease::AUTHORITY = 'cpan:KENTNL';
 }
-{
-  $Dist::Zilla::Plugin::Git::NextRelease::VERSION = '0.001000';
-}
-
+$Dist::Zilla::Plugin::Git::NextRelease::VERSION = '0.001001';
 # ABSTRACT: Use time-stamp from Git instead of process start time.
 
 use Moose;
 extends 'Dist::Zilla::Plugin::NextRelease';
 
 
-use Git::Wrapper::Plus;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use Git::Wrapper::Plus 0.003100;    # Fixed shallow commits
 use DateTime;
 
 use String::Formatter 0.100680 stringf => {
@@ -88,6 +102,14 @@ sub _build__git_timestamp {
 }
 
 
+
+
+
+
+
+
+
+
 sub section_header {
   my ($self) = @_;
 
@@ -110,7 +132,7 @@ Dist::Zilla::Plugin::Git::NextRelease - Use time-stamp from Git instead of proce
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 

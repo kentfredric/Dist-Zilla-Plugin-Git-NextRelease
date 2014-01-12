@@ -3,7 +3,7 @@ NAME
     of process start time.
 
 VERSION
-    version 0.001000
+    version 0.001001
 
 SYNOPSIS
     This module acts as a moderately thin wrapper to "[NextRelease]" so that
