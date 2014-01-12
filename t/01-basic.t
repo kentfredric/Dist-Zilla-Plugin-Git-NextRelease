@@ -58,8 +58,13 @@ $t->run_env(
             undef,
             "dzil build ran ok"
         );
-        for my $file ( Builder->files ) {
-            note explain $file;
+        for my $file ( @{ $conf->files } ) {
+            next if $file->name ne 'Changes';
+            like(
+                $file->encoded_content,
+                qr/0.01\s+2014-01-01\s+00:00:00\+00:00\s+UTC/,
+                "Specified commit timestamp in changelog"
+            );
         }
     }
 );
