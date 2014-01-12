@@ -48,12 +48,20 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
+eval { $v .= pmver('Cwd','any version') };
 eval { $v .= pmver('DateTime','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::NextRelease','any version') };
+eval { $v .= pmver('File::Copy::Recursive','any version') };
 eval { $v .= pmver('Git::Wrapper::Plus','any version') };
+eval { $v .= pmver('Git::Wrapper::Plus::Tester','any version') };
+eval { $v .= pmver('Git::Wrapper::Plus::Versions','any version') };
 eval { $v .= pmver('Module::Build','0.4204') };
 eval { $v .= pmver('Moose','any version') };
+eval { $v .= pmver('Path::FindDev','any version') };
+eval { $v .= pmver('Path::Tiny','any version') };
 eval { $v .= pmver('String::Formatter','0.100680') };
+eval { $v .= pmver('Test::DZil','any version') };
+eval { $v .= pmver('Test::Fatal','any version') };
 eval { $v .= pmver('Test::More','1.001002') };
 eval { $v .= pmver('strict','any version') };
 eval { $v .= pmver('warnings','any version') };
