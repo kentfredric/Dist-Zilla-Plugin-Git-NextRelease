@@ -94,9 +94,9 @@ sub _build__git_timestamp {
   if ( not $branch ) {
     $self->log_fatal( [ q[Branch %s does not exist], $self->branch ] );
   }
-  my $sha1 = $branch->sha1;
-  my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } $self->_gwp->git->cat_file( 'commit', $sha1 );
+  my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } $self->_gwp->git->cat_file( 'commit', $branch->sha1 );
   chomp $committer;
+  ## no critic ( Compatibility::PerlMinimumVersionAndWhy )
   if ( $committer =~ qr/\s+(\d+)\s+(\S+)\z/msx ) {
     return DateTime->from_epoch( epoch => $1, time_zone => $2 );
   }
