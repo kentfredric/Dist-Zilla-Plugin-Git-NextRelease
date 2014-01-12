@@ -48,6 +48,7 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
+eval { $v .= pmver('DateTime','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::NextRelease','any version') };
 eval { $v .= pmver('Git::Wrapper::Plus','any version') };
 eval { $v .= pmver('Module::Build','0.4204') };

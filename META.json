@@ -82,6 +82,7 @@
       },
       "runtime" : {
          "requires" : {
+            "DateTime" : "0",
             "Dist::Zilla::Plugin::NextRelease" : "0",
             "Git::Wrapper::Plus" : "0",
             "Moose" : "0",
@@ -107,6 +108,7 @@
    "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {
+         "DateTime" : "1.06",
          "Dist::Zilla::Plugin::Authority" : "1.006",
          "Dist::Zilla::Plugin::AutoPrereqs" : "5.009",
          "Dist::Zilla::Plugin::ConfirmRelease" : "5.009",
@@ -193,7 +195,7 @@
                "Dist::Zilla::Role::Bootstrap" : {
                   "distname" : "Dist-Zilla-Plugin-Git-NextRelease",
                   "fallback" : "1",
-                  "try_built" : null,
+                  "try_built" : "1",
                   "try_built_method" : "mtime"
                }
             },
@@ -617,7 +619,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::NextRelease",
             "name" : "Git::NextRelease",
-            "version" : null
+            "version" : "0.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",

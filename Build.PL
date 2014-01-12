@@ -24,6 +24,7 @@ my %module_build_args = (
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "DateTime" => 0,
     "Dist::Zilla::Plugin::NextRelease" => 0,
     "Git::Wrapper::Plus" => 0,
     "Moose" => 0,
