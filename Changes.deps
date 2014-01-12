@@ -1,0 +1,8 @@
+0.001001
+ [Added / runtime requires]
+ - utf8
+
+ [Changed / runtime requires]
+ - Git::Wrapper::Plus 0 → 0.003100
+ - perl 5.006 → 5.008
+
