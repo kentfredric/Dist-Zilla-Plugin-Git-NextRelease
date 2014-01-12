@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 use Test::More;
-use Path::FindDev qw( find_dev );
 use Path::Tiny;
+use FindBin;
 use Cwd qw( cwd );
 use File::Copy::Recursive qw( rcopy );
 use Git::Wrapper::Plus::Tester;
@@ -13,7 +13,7 @@ use Test::Fatal;
 use Test::DZil;
 
 my $dist    = 'fake_dist_01';
-my $source  = find_dev('./')->child('corpus')->child($dist);
+my $source  = path($FindBin::Bin)->parent()->child('corpus')->child($dist);
 
 my $t = Git::Wrapper::Plus::Tester->new();
 my $v = Git::Wrapper::Plus::Versions->new( git => $t->git );
