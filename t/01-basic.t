@@ -18,7 +18,7 @@ my $source  = find_dev('./')->child('corpus')->child($dist);
 my $t = Git::Wrapper::Plus::Tester->new();
 my $v = Git::Wrapper::Plus::Versions->new( git => $t->git );
 
-my $tempdir = $t->temp_dir;
+my $tempdir = $t->repo_dir;
 
 rcopy( "$source", "$tempdir" );
 
