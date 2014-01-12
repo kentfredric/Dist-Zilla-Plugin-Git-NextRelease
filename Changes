@@ -1,6 +1,11 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001000, see Changes.deps{,.all,.dev} for
+   details
+ - develop: +1 ↑1 -1
+ - runtime: +1 ↑2
 
 0.001000 2014-01-12T01:21:35Z
  - First version.

@@ -1,0 +1,10 @@
+0.001001
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Git::NextRelease
+
+ [Changed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.007003 → 2.008000
+
+ [Removed / develop requires]
+ - Dist::Zilla::Plugin::NextRelease
+
