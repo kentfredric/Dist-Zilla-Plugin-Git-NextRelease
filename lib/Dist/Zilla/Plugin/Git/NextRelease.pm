@@ -41,10 +41,12 @@ has 'branch' => (
   lazy_build => 1,
 );
 has _git_timestamp => (
+  init_arg   => undef,
   is         => ro =>,
   lazy_build => 1,
 );
 has '_gwp' => (
+  init_arg   => undef,
   is         => ro =>,
   lazy_build => 1,
 );
