@@ -1,5 +1,5 @@
 ---
-abstract: 'Use timestamp from Git instead of process start time.'
+abstract: 'Use time-stamp from Git instead of process start time.'
 author:
   - 'Kent Fredric <kentfredric@gmail.com>'
 build_requires:

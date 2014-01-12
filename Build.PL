@@ -13,7 +13,7 @@ my %module_build_args = (
   "configure_requires" => {
     "Module::Build" => "0.4204"
   },
-  "dist_abstract" => "Use timestamp from Git instead of process start time.",
+  "dist_abstract" => "Use time-stamp from Git instead of process start time.",
   "dist_author" => [
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
