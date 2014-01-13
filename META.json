@@ -111,7 +111,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Git::NextRelease" : {
          "file" : "lib/Dist/Zilla/Plugin/Git/NextRelease.pm",
-         "version" : "0.001002"
+         "version" : "0.002000"
       }
    },
    "release_status" : "stable",
@@ -126,7 +126,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-Plugin-Git-NextRelease"
       }
    },
-   "version" : "0.001002",
+   "version" : "0.002000",
    "x_BuiltWith" : {
       "modules" : {
          "Cwd" : "3.45",

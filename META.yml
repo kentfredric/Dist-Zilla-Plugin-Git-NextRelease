@@ -26,7 +26,7 @@ name: Dist-Zilla-Plugin-Git-NextRelease
 provides:
   Dist::Zilla::Plugin::Git::NextRelease:
     file: lib/Dist/Zilla/Plugin/Git/NextRelease.pm
-    version: 0.001002
+    version: 0.002000
 requires:
   DateTime: 0
   Dist::Zilla::Plugin::NextRelease: 0
@@ -41,7 +41,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Git-NextRelease/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Git-NextRelease
   repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Git-NextRelease.git
-version: 0.001002
+version: 0.002000
 x_BuiltWith:
   modules:
     Cwd: 3.45
