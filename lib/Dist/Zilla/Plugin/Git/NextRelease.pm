@@ -123,8 +123,8 @@ sub _build_branch {
       $self->log_fatal(
         [
               q[Cannot determine branch to get timestamp from when not on a branch.]
-            . q[Specify default_branch if you want this to work here.]
-        ]
+            . q[Specify default_branch if you want this to work here.],
+        ],
       );
     }
     return $self->default_branch;
