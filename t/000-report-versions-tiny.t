@@ -54,6 +54,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::NextRelease','any version') };
 eval { $v .= pmver('File::Copy::Recursive','any version') };
 eval { $v .= pmver('FindBin','any version') };
 eval { $v .= pmver('Git::Wrapper::Plus','0.003100') };
+eval { $v .= pmver('Git::Wrapper::Plus::Support','any version') };
 eval { $v .= pmver('Git::Wrapper::Plus::Tester','any version') };
 eval { $v .= pmver('Git::Wrapper::Plus::Versions','any version') };
 eval { $v .= pmver('Module::Build','0.4204') };

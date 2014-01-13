@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
+0.001002 2014-01-13T22:16:25Z
+
 0.001001 2014-01-12T21:05:29Z
  [Bugfix]
  - Bump to force a fixed Git::Wrapper::Plus with shallow repo fails.
