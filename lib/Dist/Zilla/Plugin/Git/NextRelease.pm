@@ -7,6 +7,8 @@ package Dist::Zilla::Plugin::Git::NextRelease;
 $Dist::Zilla::Plugin::Git::NextRelease::VERSION = '0.001002';
 # ABSTRACT: Use time-stamp from Git instead of process start time.
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Moose qw( extends has );
 extends 'Dist::Zilla::Plugin::NextRelease';
 
@@ -87,11 +89,15 @@ has 'branch' => (
 
 
 has 'default_branch' => (
-  is        => ro  =>,
-  lazy      => 1,
-  default   => sub { die 'default_branch was used but not specified' },
-  predicate => 'has_default_branch',
+  is         => ro =>,
+  lazy_build => 1,
+  predicate  => 'has_default_branch',
 );
+
+sub _build_default_branch {
+  my ($self) = @_;
+  return $self->log_fatal('default_branch was used but not specified');
+}
 
 has _git_timestamp => (
   init_arg   => undef,
@@ -117,8 +123,8 @@ sub _build_branch {
       $self->log_fatal(
         [
               q[Cannot determine branch to get timestamp from when not on a branch.]
-            . q[Specify default_branch if you want this to work here.]
-        ]
+            . q[Specify default_branch if you want this to work here.],
+        ],
       );
     }
     return $self->default_branch;
@@ -212,7 +218,7 @@ This method basically returns the date string to append to the Changes header.
 
 =head2 C<branch>
 
-If set, always use the specified branch to determine timestamp.
+If set, always use the specified branch to determine time-stamp.
 
 Default value is resolved from determining "current" branch.
 

@@ -43,7 +43,7 @@ METHODS
 
 ATTRIBUTES
   "branch"
-    If set, always use the specified branch to determine timestamp.
+    If set, always use the specified branch to determine time-stamp.
 
     Default value is resolved from determining "current" branch.
 
