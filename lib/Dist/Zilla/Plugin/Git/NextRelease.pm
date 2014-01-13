@@ -7,6 +7,8 @@ package Dist::Zilla::Plugin::Git::NextRelease;
 
 # ABSTRACT: Use time-stamp from Git instead of process start time.
 
+# AUTHORITY
+
 use Moose qw( extends has );
 extends 'Dist::Zilla::Plugin::NextRelease';
 
