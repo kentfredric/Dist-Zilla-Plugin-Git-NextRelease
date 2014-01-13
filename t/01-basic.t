@@ -7,7 +7,7 @@ use FindBin;
 use Cwd qw( cwd );
 use File::Copy::Recursive qw( rcopy );
 use Git::Wrapper::Plus::Tester;
-use Git::Wrapper::Plus::Versions;
+use Git::Wrapper::Plus::Support;
 
 use Test::Fatal;
 use Test::DZil;
@@ -16,7 +16,7 @@ my $dist   = 'fake_dist_01';
 my $source = path($FindBin::Bin)->parent()->child('corpus')->child($dist);
 
 my $t = Git::Wrapper::Plus::Tester->new();
-my $v = Git::Wrapper::Plus::Versions->new( git => $t->git );
+my $s = Git::Wrapper::Plus::Support->new( git => $t->git );
 
 my $tempdir = $t->repo_dir;
 
@@ -26,14 +26,12 @@ $t->run_env(
   sub {
 
     my $git = $t->git;
-
+    if ( not $s->supports_command('init-db') ) {
+      plan skip_all => 'This version of Git cannot init-db';
+      return;
+    }
     my $excp = exception {
-      if ( $v->newer_than('1.5') ) {
-        $git->init();
-      }
-      else {
-        $git->init_db();
-      }
+      $git->init_db();
       $git->add('Changes');
       $git->add('dist.ini');
       $git->add('lib/E.pm');
