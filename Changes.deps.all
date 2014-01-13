@@ -1,4 +1,14 @@
-0.001001
+0.002000
+ [Added / test requires]
+ - Git::Wrapper::Plus::Support
+
+ [Changed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.008000 → 2.009000
+
+ [Removed / test requires]
+ - Git::Wrapper::Plus::Versions
+
+0.001001 2014-01-12T21:05:29Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Git::NextRelease
 

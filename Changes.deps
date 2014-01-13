@@ -1,4 +1,11 @@
-0.001001
+0.002000
+ [Added / test requires]
+ - Git::Wrapper::Plus::Support
+
+ [Removed / test requires]
+ - Git::Wrapper::Plus::Versions
+
+0.001001 2014-01-12T21:05:29Z
  [Added / runtime requires]
  - utf8
 

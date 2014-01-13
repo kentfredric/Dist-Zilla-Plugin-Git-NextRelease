@@ -5,6 +5,12 @@ Release history for Dist-Zilla-Plugin-Git-NextRelease
  - New attribute default_branch which will be used if you're on a detached
    head, and only on a detached head.
 
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001001, see Changes.deps{,.all,.dev} for
+   details
+ - develop: ↑1
+ - test: +1 -1
+
 0.001001 2014-01-12T21:05:29Z
  [Bugfix]
  - Bump to force a fixed Git::Wrapper::Plus with shallow repo fails.
