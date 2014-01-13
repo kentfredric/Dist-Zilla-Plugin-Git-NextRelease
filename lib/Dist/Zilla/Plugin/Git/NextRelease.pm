@@ -69,7 +69,7 @@ use String::Formatter 0.100680 stringf => {
 
 =attr C<branch>
 
-If set, always use the specified branch to determine timestamp.
+If set, always use the specified branch to determine time-stamp.
 
 Default value is resolved from determining "current" branch.
 
