@@ -225,7 +225,7 @@ Default value is resolved from determining "current" branch.
 =head2 C<default_branch>
 
 If you want being on a branch to always resolve to that branch,
-but you still want a useful behaviour when on a detached head,
+but you still want a useful behavior when on a detached head,
 specifying this value means that on a detached head, the stated branch will be used instead.
 
 =head1 AUTHOR
