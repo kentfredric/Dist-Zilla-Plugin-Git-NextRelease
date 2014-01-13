@@ -89,11 +89,15 @@ specifying this value means that on a detached head, the stated branch will be u
 =cut
 
 has 'default_branch' => (
-  is        => ro  =>,
-  lazy      => 1,
-  default   => sub { die 'default_branch was used but not specified' },
-  predicate => 'has_default_branch',
+  is         => ro =>,
+  lazy_build => 1,
+  predicate  => 'has_default_branch',
 );
+
+sub _build_default_branch {
+  my ($self) = @_;
+  return $self->log_fatal('default_branch was used but not specified');
+}
 
 has _git_timestamp => (
   init_arg   => undef,
