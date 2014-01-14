@@ -3,7 +3,7 @@ NAME
     of process start time.
 
 VERSION
-    version 0.001001
+    version 0.002000
 
 SYNOPSIS
     This module acts as a moderately thin wrapper to "[NextRelease]" so that
@@ -20,6 +20,12 @@ SYNOPSIS
 
         +branch = master
 
+    Or:
+
+        +default_branch = master
+
+    ( The latter only having impact in detached-head conditions )
+
     This exists mostly because of my extensive use of "[Git::CommitBuild]",
     to provide a commit series for both releases, and builds of all
     changes/commits in order to push them to Travis for testing. ( Mostly,
@@ -34,6 +40,18 @@ METHODS
 
     This method basically returns the date string to append to the Changes
     header.
+
+ATTRIBUTES
+  "branch"
+    If set, always use the specified branch to determine time-stamp.
+
+    Default value is resolved from determining "current" branch.
+
+  "default_branch"
+    If you want being on a branch to always resolve to that branch, but you
+    still want a useful behavior when on a detached head, specifying this
+    value means that on a detached head, the stated branch will be used
+    instead.
 
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>

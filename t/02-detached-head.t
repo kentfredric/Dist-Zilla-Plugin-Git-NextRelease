@@ -12,7 +12,7 @@ use Git::Wrapper::Plus::Support;
 use Test::Fatal;
 use Test::DZil;
 
-my $dist   = 'fake_dist_01';
+my $dist   = 'fake_dist_02';
 my $source = path($FindBin::Bin)->parent()->child('corpus')->child($dist);
 
 my $t = Git::Wrapper::Plus::Tester->new();
@@ -26,17 +26,32 @@ $t->run_env(
   sub {
 
     my $git = $t->git;
+
+    if ( not $s->supports_behavior('can-checkout-detached') ) {
+      plan skip_all => 'This version of Git cannot checkout detached heads';
+      return;
+    }
     if ( not $s->supports_command('init-db') ) {
       plan skip_all => 'This version of Git cannot init-db';
       return;
     }
+    if ( not $s->supports_command('update-index') ) {
+      plan skip_all => 'This version of Git cannot update-index';
+      return;
+    }
+
     my $excp = exception {
       $git->init_db();
       $git->add('Changes');
       $git->add('dist.ini');
       $git->add('lib/E.pm');
       local $ENV{'GIT_COMMITTER_DATE'} = '1388534400 +1300';
-      $git->commit('-m First Commit');
+      $git->commit( '-m', 'First Commit' );
+      $tempdir->child('Changes')->spew_raw('Sample modification');
+      $git->update_index('Changes');
+      local $ENV{'GIT_COMMITTER_DATE'} = '1388534500 +1300';
+      $git->commit( '-m', 'Second commit' );
+      $git->checkout('HEAD^1');
     };
     is( $excp, undef, 'Git::Wrapper test preparation did not fail' )
       or diag $excp;
@@ -58,7 +73,7 @@ $t->run_env(
     );
     for my $file ( @{ $conf->files } ) {
       next if $file->name ne 'Changes';
-      like( $file->encoded_content, qr/0.01\s+2014-01-01\s+00:00:00/, "Specified commit timestamp in changelog" );
+      like( $file->encoded_content, qr/0.01\s+2014-01-01\s+00:01:40/, "Specified commit timestamp in changelog" );
     }
   }
 );

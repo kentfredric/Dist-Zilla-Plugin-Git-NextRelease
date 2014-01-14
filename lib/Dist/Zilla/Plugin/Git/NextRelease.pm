@@ -4,14 +4,19 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::Plugin::Git::NextRelease;
-BEGIN {
-  $Dist::Zilla::Plugin::Git::NextRelease::AUTHORITY = 'cpan:KENTNL';
-}
-$Dist::Zilla::Plugin::Git::NextRelease::VERSION = '0.001001';
+$Dist::Zilla::Plugin::Git::NextRelease::VERSION = '0.002000';
 # ABSTRACT: Use time-stamp from Git instead of process start time.
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( extends has );
 extends 'Dist::Zilla::Plugin::NextRelease';
+
+
+
+
+
+
 
 
 
@@ -62,10 +67,38 @@ use String::Formatter 0.100680 stringf => {
   },
 };
 
+
+
+
+
+
+
+
+
 has 'branch' => (
   is         => ro =>,
   lazy_build => 1,
 );
+
+
+
+
+
+
+
+
+
+has 'default_branch' => (
+  is         => ro =>,
+  lazy_build => 1,
+  predicate  => 'has_default_branch',
+);
+
+sub _build_default_branch {
+  my ($self) = @_;
+  return $self->log_fatal('default_branch was used but not specified');
+}
+
 has _git_timestamp => (
   init_arg   => undef,
   is         => ro =>,
@@ -86,7 +119,15 @@ sub _build_branch {
   my ($self) = @_;
   my $cb = $self->_gwp->branches->current_branch;
   if ( not $cb ) {
-    $self->log_fatal(q[Cannot determine branch to get timestamp from when not on a branch]);
+    if ( not $self->has_default_branch ) {
+      $self->log_fatal(
+        [
+              q[Cannot determine branch to get timestamp from when not on a branch.]
+            . q[Specify default_branch if you want this to work here.],
+        ],
+      );
+    }
+    return $self->default_branch;
   }
   return $cb->name;
 }
@@ -137,7 +178,7 @@ Dist::Zilla::Plugin::Git::NextRelease - Use time-stamp from Git instead of proce
 
 =head1 VERSION
 
-version 0.001001
+version 0.002000
 
 =head1 SYNOPSIS
 
@@ -153,6 +194,12 @@ Optionally:
 
     +branch = master
 
+Or:
+
+    +default_branch = master
+
+( The latter only having impact in detached-head conditions )
+
 This exists mostly because of my extensive use of L<< C<[Git::CommitBuild]>|Dist::Zilla::Plugin::Git::CommitBuild >>, to provide
 a commit series for both releases, and builds of all changes/commits in order to push them to Travis for testing. ( Mostly,
 because testing a build branch is substantially faster than testing a master that requires C<Dist::Zilla>, especially if you're
@@ -166,6 +213,20 @@ This is the sole method of L<< C<[NextRelease]>|Dist::Zilla::Plugin::NextRelease
 in order for it to inject the right things.
 
 This method basically returns the date string to append to the Changes header.
+
+=head1 ATTRIBUTES
+
+=head2 C<branch>
+
+If set, always use the specified branch to determine time-stamp.
+
+Default value is resolved from determining "current" branch.
+
+=head2 C<default_branch>
+
+If you want being on a branch to always resolve to that branch,
+but you still want a useful behavior when on a detached head,
+specifying this value means that on a detached head, the stated branch will be used instead.
 
 =head1 AUTHOR
 
