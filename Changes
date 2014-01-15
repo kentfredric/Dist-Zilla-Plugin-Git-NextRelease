@@ -4,6 +4,12 @@ Release history for Dist-Zilla-Plugin-Git-NextRelease
  [00 Bug Fix]
  - use newer dzil for encoded_content
 
+ [Dependencies::Stats]
+ - Dependencies changed since 0.002000, see Changes.deps{,.all,.dev} for
+   details
+ - develop: +1 ↑1 -2
+ - runtime: +1
+ - test: +5
 
 0.002000 2014-01-13T22:29:38Z
  [00 Minor]
