@@ -1,6 +1,9 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+ [00 Bug Fix]
+ - use newer dzil for encoded_content
+
 
 0.002000 2014-01-13T22:29:38Z
  [00 Minor]
