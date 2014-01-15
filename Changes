@@ -1,5 +1,16 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
+0.002001 2014-01-15T02:28:43Z
+ [00 Bug Fix]
+ - use newer dzil for encoded_content
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.002000, see Changes.deps{,.all,.dev} for
+   details
+ - develop: +1 ↑1 -2
+ - runtime: +1
+ - test: +5
+
 0.002000 2014-01-13T22:29:38Z
  [00 Minor]
  - New attribute default_branch which will be used if you're on a detached

@@ -38,7 +38,7 @@ maint-travis-ci/yamls/sterile.yaml
 maint-travis-ci/yamls/sterile2.yaml
 perlcritic.rc
 t/00-compile/lib_Dist_Zilla_Plugin_Git_NextRelease_pm.t
-t/000-report-versions-tiny.t
+t/00-report-prereqs.t
 t/01-basic.t
 t/02-detached-head.t
 weaver.ini

@@ -1,4 +1,17 @@
-0.002000
+0.002001
+ [Added / runtime requires]
+ - Dist::Zilla 5.000
+
+ [Added / test recommends]
+ - CPAN::Meta
+ - CPAN::Meta::Requirements
+
+ [Added / test requires]
+ - ExtUtils::MakeMaker
+ - File::Spec::Functions
+ - List::Util
+
+0.002000 2014-01-13T22:29:38Z
  [Added / test requires]
  - Git::Wrapper::Plus::Support
 

@@ -4,10 +4,13 @@ author:
   - 'Kent Fredric <kentfredric@gmail.com>'
 build_requires:
   Cwd: 0
+  ExtUtils::MakeMaker: 0
   File::Copy::Recursive: 0
+  File::Spec::Functions: 0
   FindBin: 0
   Git::Wrapper::Plus::Support: 0
   Git::Wrapper::Plus::Tester: 0
+  List::Util: 0
   Module::Build: 0.4204
   Path::Tiny: 0
   Test::DZil: 0
@@ -25,9 +28,10 @@ name: Dist-Zilla-Plugin-Git-NextRelease
 provides:
   Dist::Zilla::Plugin::Git::NextRelease:
     file: lib/Dist/Zilla/Plugin/Git/NextRelease.pm
-    version: 0.002000
+    version: 0.002001
 requires:
   DateTime: 0
+  Dist::Zilla: 5.000
   Dist::Zilla::Plugin::NextRelease: 0
   Git::Wrapper::Plus: 0.003100
   Moose: 0
@@ -40,11 +44,14 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Plugin-Git-NextRelease/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Plugin-Git-NextRelease
   repository: https://github.com/kentfredric/Dist-Zilla-Plugin-Git-NextRelease.git
-version: 0.002000
+version: 0.002001
 x_BuiltWith:
   modules:
+    CPAN::Meta: 2.133380
+    CPAN::Meta::Requirements: 2.125
     Cwd: 3.45
     DateTime: 1.06
+    Dist::Zilla: 5.011
     Dist::Zilla::Plugin::Authority: 1.006
     Dist::Zilla::Plugin::AutoPrereqs: 5.011
     Dist::Zilla::Plugin::ConfirmRelease: 5.011
@@ -53,7 +60,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Git::Commit: 2.019
     Dist::Zilla::Plugin::Git::CommitBuild: 2.019
     Dist::Zilla::Plugin::Git::GatherDir: 2.019
-    Dist::Zilla::Plugin::Git::NextRelease: 0.002000
+    Dist::Zilla::Plugin::Git::NextRelease: 0.002001
     Dist::Zilla::Plugin::Git::NextVersion::Sanitized: 0.001000
     Dist::Zilla::Plugin::Git::Tag: 2.019
     Dist::Zilla::Plugin::GithubMeta: 0.42
@@ -77,26 +84,29 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Prereqs::MatchInstalled: 0.1.6
     Dist::Zilla::Plugin::ReadmeAnyFromPod: 0.133360
     Dist::Zilla::Plugin::ReadmeFromPod: 0.21
-    Dist::Zilla::Plugin::ReportVersions::Tiny: 1.10
     Dist::Zilla::Plugin::RunExtraTests: 0.016
     Dist::Zilla::Plugin::Test::CPAN::Changes: 0.008
     Dist::Zilla::Plugin::Test::Compile::PerFile: 0.001001
     Dist::Zilla::Plugin::Test::Kwalitee: 2.07
     Dist::Zilla::Plugin::Test::MinimumVersion: 2.000005
     Dist::Zilla::Plugin::Test::Perl::Critic: 2.112410
+    Dist::Zilla::Plugin::Test::ReportPrereqs: 0.012
     Dist::Zilla::Plugin::TestRelease: 5.011
     Dist::Zilla::Plugin::Twitter: 0.024
     Dist::Zilla::Plugin::UploadToCPAN: 5.011
-    Dist::Zilla::PluginBundle::Author::KENTNL: 2.009000
+    Dist::Zilla::PluginBundle::Author::KENTNL: 2.010000
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.7.2
+    ExtUtils::MakeMaker: 6.86
     File::Copy::Recursive: 0.38
+    File::Spec::Functions: 3.45
     FindBin: 1.51
-    Git::Wrapper::Plus: 0.003100
-    Git::Wrapper::Plus::Support: 0.003100
-    Git::Wrapper::Plus::Tester: 0.003100
+    Git::Wrapper::Plus: 0.003101
+    Git::Wrapper::Plus::Support: 0.003101
+    Git::Wrapper::Plus::Tester: 0.003101
+    List::Util: 1.35
     Module::Build: 0.4204
     Moose: 2.1201
-    Path::Tiny: 0.051
+    Path::Tiny: 0.052
     Pod::Coverage::TrustPod: 0.100003
     String::Formatter: 0.102084
     Test::CPAN::Changes: 0.27
@@ -109,7 +119,6 @@ x_BuiltWith:
     Test::Pod::Coverage: 1.08
     strict: 1.08
     utf8: 1.13
-    version: 0.9906
     warnings: 1.20
   perl:
     original: v5.19.7
@@ -219,9 +228,9 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/PodSyntaxTests'
       version: 5.011
     -
-      class: Dist::Zilla::Plugin::ReportVersions::Tiny
-      name: '@Author::KENTNL/ReportVersions::Tiny'
-      version: 1.10
+      class: Dist::Zilla::Plugin::Test::ReportPrereqs
+      name: '@Author::KENTNL/Test::ReportPrereqs'
+      version: 0.012
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       name: '@Author::KENTNL/Test::Kwalitee'
@@ -344,7 +353,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::NextRelease
       name: '@Author::KENTNL/Git::NextRelease'
-      version: 0.002000
+      version: 0.002001
     -
       class: Dist::Zilla::Plugin::AutoPrereqs
       name: '@Author::KENTNL/AutoPrereqs'
