@@ -1458,7 +1458,7 @@ allow_import_of = strict warnings 5.008 utf8
 # severity                           = 4
 # maximum_violations_per_document    = no_limit
 # Cannot programmatically discover what parameters this policy takes.
-exempt_subs = String::Formatter::str_rf
+exempt_subs = String::Formatter::str_rf String::Formatter::_format_version
 
 #
 [Subroutines::ProhibitCallsToUnexportedSubs]
