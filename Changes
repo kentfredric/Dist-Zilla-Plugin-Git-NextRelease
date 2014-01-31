@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+
+0.002010 2014-01-31T04:25:22Z
  [00 Minor]
  - Toolkit switch to EUMM.soft
 
