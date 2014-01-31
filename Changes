@@ -1,8 +1,13 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
-0.002010 2014-01-31T03:37:18Z
+0.002010 2014-01-31T04:14:55Z
  [00 Minor]
- - Toolkit switch to EUMM
+ - Toolkit switch to EUMM.soft
+
+ [Dependencies::AggregateChange]
+ - 5.8 : 206 → 205
+ - 5.10 : 185 → 184
+ - 5.19 : 170 → 167
 
  [Dependencies::Stats]
  - Dependencies changed since 0.002001, see Changes.deps{,.all,.dev} for
