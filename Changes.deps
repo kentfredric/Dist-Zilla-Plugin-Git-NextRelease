@@ -1,4 +1,30 @@
-0.002001
+0.002010
+ [Added / configure recommends]
+ - ExtUtils::MakeMaker 6.86
+
+ [Added / configure requires]
+ - ExtUtils::MakeMaker 6.30
+
+ [Added / test recommends]
+ - ExtUtils::MakeMaker 6.86
+ - Test::More 1.001002
+
+ [Added / test requires]
+ - version
+
+ [Changed / test recommends]
+ - CPAN::Meta::Requirements 0 → 2.120900
+
+ [Changed / test requires]
+ - Test::More 1.001002 → 0.89
+
+ [Removed / build requires]
+ - Module::Build 0.4204
+
+ [Removed / configure requires]
+ - Module::Build 0.4204
+
+0.002001 2014-01-15T02:28:43Z
  [Added / runtime requires]
  - Dist::Zilla 5.000
 
