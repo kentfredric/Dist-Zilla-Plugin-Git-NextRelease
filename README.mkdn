@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::Git::NextRelease - Use time-stamp from Git instead of proce
 
 # VERSION
 
-version 0.002001
+version 0.002010
 
 # SYNOPSIS
 

@@ -1,4 +1,41 @@
-0.002001
+0.002010
+ [Added / configure recommends]
+ - ExtUtils::MakeMaker 6.86
+
+ [Added / configure requires]
+ - ExtUtils::MakeMaker 6.30
+
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::MakeMaker
+ - Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled
+
+ [Added / test recommends]
+ - ExtUtils::MakeMaker 6.86
+ - Test::More 1.001002
+
+ [Added / test requires]
+ - version
+
+ [Changed / develop requires]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.010000 → 2.012000
+
+ [Changed / test recommends]
+ - CPAN::Meta::Requirements 0 → 2.120900
+
+ [Changed / test requires]
+ - Test::More 1.001002 → 0.89
+
+ [Removed / build requires]
+ - Module::Build 0.4204
+
+ [Removed / configure requires]
+ - Module::Build 0.4204
+
+ [Removed / develop requires]
+ - Dist::Zilla::Plugin::ModuleBuild
+ - Dist::Zilla::Plugin::Prereqs::MatchInstalled
+
+0.002001 2014-01-15T02:28:43Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::Test::ReportPrereqs
 
