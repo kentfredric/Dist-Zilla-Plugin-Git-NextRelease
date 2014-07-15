@@ -1,6 +1,11 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 0.002010, see misc/*.deps* for details
+ - configure: (recommends: ↑1)
+ - develop: -1 (suggests: +2 -1)
+ - test: (recommends: ↑2)
 
 0.002010 2014-01-31T04:25:22Z
  [00 Minor]
