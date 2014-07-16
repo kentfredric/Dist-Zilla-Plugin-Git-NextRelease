@@ -27,7 +27,7 @@ for my $wordlist (@stopwords) {
 }
 
 $bundle->add_or_append_policy_field(
-  'Subroutines::ProhibitCallsToUndeclaredSubs' => ( 'exempt_subs' => 'String::Formatter::str_rf' ), );
+  'Subroutines::ProhibitCallsToUndeclaredSubs' => ( 'exempt_subs' => 'String::Formatter::_format_version' ), );
 
 $bundle->remove_policy('ErrorHandling::RequireUseOfExceptions');
 
