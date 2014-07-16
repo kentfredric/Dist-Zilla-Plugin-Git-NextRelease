@@ -1,5 +1,15 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
+0.002011 2014-07-16T14:58:54Z
+ [00 Trivial]
+ - Misc packaging cleanups
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.002010, see misc/*.deps* for details
+ - configure: (recommends: ↑1)
+ - develop: +3 -3 (suggests: +2 -1)
+ - test: (recommends: ↑2)
+
 0.002010 2014-01-31T04:25:22Z
  [00 Minor]
  - Toolkit switch to EUMM.soft
@@ -10,32 +20,28 @@ Release history for Dist-Zilla-Plugin-Git-NextRelease
  - 5.19 : 170 → 167
 
  [Dependencies::Stats]
- - Dependencies changed since 0.002001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.002001, see misc/*.deps* for details
  - build: -1
- - configure: +2 -1
+ - configure: +1 -1 (recommends: +1)
  - develop: +2 ↑1 -2
- - test: +3 ↑1 ↓1
+ - test: +1 ↓1 (recommends: +2 ↑1)
 
 0.002001 2014-01-15T02:28:43Z
  [00 Bug Fix]
  - use newer dzil for encoded_content
 
  [Dependencies::Stats]
- - Dependencies changed since 0.002000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.002000, see misc/*.deps* for details
  - develop: +1 ↑1 -2
  - runtime: +1
- - test: +5
+ - test: +3 (recommends: +2)
 
 0.002000 2014-01-13T22:29:38Z
  [00 Minor]
- - New attribute default_branch which will be used if you're on a detached
-   head, and only on a detached head.
+ - New attribute default_branch which will be used if you're on a detached head, and only on a detached head.
 
  [Dependencies::Stats]
- - Dependencies changed since 0.001001, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.001001, see misc/*.deps* for details
  - develop: ↑1
  - test: +1 -1
 
@@ -45,8 +51,7 @@ Release history for Dist-Zilla-Plugin-Git-NextRelease
  - Also to finish bootstapping
 
  [Dependencies::Stats]
- - Dependencies changed since 0.001000, see Changes.deps{,.all,.dev} for
-   details
+ - Dependencies changed since 0.001000, see misc/*.deps* for details
  - develop: +1 ↑1 -1
  - runtime: +1 ↑2
 
