@@ -1,9 +1,12 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 0.002011
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::CopyFilesFromBuild
+
  [Added / develop suggests]
  - Dist::Zilla::App::Command::bakeini 0.001001
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.016003
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.016004
 
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 6.86 → 6.98
