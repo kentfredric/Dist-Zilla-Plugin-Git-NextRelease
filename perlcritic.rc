@@ -305,6 +305,7 @@ allowed_pragmata = diagnostics feature perlversion strict warnings utf8
 [Subroutines::ProhibitBuiltinHomonyms]
 
 [Subroutines::ProhibitCallsToUndeclaredSubs]
+exempt_subs = String::Formatter::str_rf
 
 [Subroutines::ProhibitCallsToUnexportedSubs]
 
