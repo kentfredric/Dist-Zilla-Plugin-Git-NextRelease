@@ -1,6 +1,9 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+ [00 Trivial]
+ - Misc packaging cleanups
+
  [Dependencies::Stats]
  - Dependencies changed since 0.002010, see misc/*.deps* for details
  - configure: (recommends: ↑1)
