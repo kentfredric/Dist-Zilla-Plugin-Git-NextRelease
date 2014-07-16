@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+
+0.002011 2014-07-16T14:58:54Z
  [00 Trivial]
  - Misc packaging cleanups
 
