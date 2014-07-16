@@ -74,7 +74,7 @@
          },
          "suggests" : {
             "Dist::Zilla::App::Command::bakeini" : "0.001001",
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.016003"
+            "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.016004"
          }
       },
       "runtime" : {
@@ -171,7 +171,7 @@
          "Dist::Zilla::Plugin::PodSyntaxTests" : "5.019",
          "Dist::Zilla::Plugin::PodWeaver" : "4.005",
          "Dist::Zilla::Plugin::Prereqs" : "5.019",
-         "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.001000",
+         "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled" : "0.002000",
          "Dist::Zilla::Plugin::ReadmeAnyFromPod" : "0.141760",
          "Dist::Zilla::Plugin::ReadmeFromPod" : "0.21",
          "Dist::Zilla::Plugin::RunExtraTests" : "0.022",
@@ -184,7 +184,7 @@
          "Dist::Zilla::Plugin::TestRelease" : "5.019",
          "Dist::Zilla::Plugin::Twitter" : "0.025",
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.019",
-         "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.016003",
+         "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.016004",
          "ExtUtils::MakeMaker" : "6.98",
          "File::Copy::Recursive" : "0.38",
          "File::Spec::Functions" : "3.48",
@@ -243,7 +243,7 @@
                }
             },
             "name" : "Bootstrap::lib",
-            "version" : "1.000002"
+            "version" : "1.000003"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextVersion::Sanitized",
@@ -756,7 +756,7 @@
                }
             },
             "name" : "@Author::KENTNL/Prereqs::Recommend::MatchInstalled",
-            "version" : "0.001000"
+            "version" : "0.002000"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled",
@@ -775,7 +775,7 @@
                }
             },
             "name" : "@Author::KENTNL/always_latest_develop_bundle",
-            "version" : "0.001000"
+            "version" : "0.002000"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",
