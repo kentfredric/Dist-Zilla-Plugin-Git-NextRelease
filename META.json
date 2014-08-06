@@ -239,7 +239,7 @@
                }
             },
             "name" : "Bootstrap::lib",
-            "version" : "1.000003"
+            "version" : "1.000004"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
