@@ -2,6 +2,7 @@ Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
  [00 Trivial]
+ - CPANDAY!
  - no code changes
  - tests augmented
  - whitespace adjusted.
