@@ -14,33 +14,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 use Moose qw( extends has );
 extends 'Dist::Zilla::Plugin::NextRelease';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 use Git::Wrapper::Plus 0.003100;    # Fixed shallow commits
 use DateTime;
 
