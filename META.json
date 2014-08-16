@@ -117,7 +117,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::Git::NextRelease" : {
          "file" : "lib/Dist/Zilla/Plugin/Git/NextRelease.pm",
-         "version" : "0.002012"
+         "version" : "0.002013"
       }
    },
    "release_status" : "stable",
@@ -132,7 +132,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-Git-NextRelease"
       }
    },
-   "version" : "0.002012",
+   "version" : "0.002013",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.142060",
@@ -645,7 +645,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.002012-source",
+                  "tag" : "0.002013-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -716,7 +716,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.002012",
+                  "tag" : "0.002013",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
