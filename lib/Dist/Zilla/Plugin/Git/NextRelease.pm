@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Git::NextRelease;
 
-our $VERSION = '0.002011';
+our $VERSION = '0.002012';
 
 # ABSTRACT: Use time-stamp from Git instead of process start time.
 
@@ -13,33 +13,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moose qw( extends has );
 extends 'Dist::Zilla::Plugin::NextRelease';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 use Git::Wrapper::Plus 0.003100;    # Fixed shallow commits
 use DateTime;
@@ -180,7 +153,7 @@ Dist::Zilla::Plugin::Git::NextRelease - Use time-stamp from Git instead of proce
 
 =head1 VERSION
 
-version 0.002011
+version 0.002012
 
 =head1 SYNOPSIS
 

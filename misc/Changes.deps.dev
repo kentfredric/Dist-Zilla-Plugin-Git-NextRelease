@@ -1,6 +1,13 @@
 This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and OPTIONAL )
 
-0.002011
+0.002012
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Git::Contributors 0.006
+
+ [Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.016004 → 2.017002
+
+0.002011 2014-07-16T14:58:54Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::BumpVersionAfterRelease
  - Dist::Zilla::Plugin::CopyFilesFromBuild
