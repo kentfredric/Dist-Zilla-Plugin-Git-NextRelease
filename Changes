@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+
+0.002012 2014-08-15T21:16:31Z
  [00 Trivial]
  - CPANDAY!
  - no code changes
