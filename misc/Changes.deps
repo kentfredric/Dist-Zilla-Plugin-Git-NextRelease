@@ -1,6 +1,8 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-0.002012
+0.002013
+
+0.002012 2014-08-15T21:16:31Z
  [Added / test requires]
  - File::Spec
 
