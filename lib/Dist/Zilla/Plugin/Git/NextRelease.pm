@@ -11,7 +11,7 @@ our $VERSION = '0.003000';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Moose qw( extends has );
+use Moose qw( extends has around );
 extends 'Dist::Zilla::Plugin::NextRelease';
 
 use Git::Wrapper::Plus 0.003100;    # Fixed shallow commits
