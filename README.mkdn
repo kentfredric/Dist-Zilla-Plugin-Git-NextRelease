@@ -56,7 +56,7 @@ specifying this value means that on a detached head, the stated branch will be u
 
 # AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
