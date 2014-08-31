@@ -23,7 +23,7 @@ name: Dist-Zilla-Plugin-Git-NextRelease
 provides:
   Dist::Zilla::Plugin::Git::NextRelease:
     file: lib/Dist/Zilla/Plugin/Git/NextRelease.pm
-    version: '0.002013'
+    version: '0.003000'
 requires:
   DateTime: '0'
   Dist::Zilla: '5.000'
@@ -39,7 +39,7 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Git-NextRelease/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Git-NextRelease
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-Git-NextRelease.git
-version: '0.002013'
+version: '0.003000'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
@@ -459,7 +459,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: '0'
-          tag: 0.002013-source
+          tag: 0.003000-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -513,7 +513,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: '0'
-          tag: '0.002013'
+          tag: '0.003000'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local

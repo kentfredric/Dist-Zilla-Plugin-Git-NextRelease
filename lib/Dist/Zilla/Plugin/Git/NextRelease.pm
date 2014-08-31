@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Git::NextRelease;
 
-our $VERSION = '0.002013';
+our $VERSION = '0.003000';
 
 # ABSTRACT: Use time-stamp from Git instead of process start time.
 
@@ -153,7 +153,7 @@ Dist::Zilla::Plugin::Git::NextRelease - Use time-stamp from Git instead of proce
 
 =head1 VERSION
 
-version 0.002013
+version 0.003000
 
 =head1 SYNOPSIS
 
