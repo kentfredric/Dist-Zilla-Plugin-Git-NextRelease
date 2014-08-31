@@ -135,7 +135,7 @@
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.142060",
-         "DateTime" : "1.10",
+         "DateTime" : "1.12",
          "Dist::Zilla" : "5.020",
          "Dist::Zilla::App::Command::bakeini" : "0.001002",
          "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.003001",
@@ -241,7 +241,7 @@
                }
             },
             "name" : "Bootstrap::lib",
-            "version" : "1.000005"
+            "version" : "1.001000"
          },
          {
             "class" : "Dist::Zilla::Plugin::MetaConfig",
