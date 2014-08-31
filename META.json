@@ -102,6 +102,7 @@
          },
          "requires" : {
             "Cwd" : "0",
+            "Dist::Zilla::Util::Test::KENTNL" : "1.003001",
             "ExtUtils::MakeMaker" : "0",
             "File::Copy::Recursive" : "0",
             "File::Spec" : "0",
@@ -187,6 +188,7 @@
          "Dist::Zilla::Plugin::Twitter" : "0.025",
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.020",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.020000",
+         "Dist::Zilla::Util::Test::KENTNL" : "1.003001",
          "ExtUtils::MakeMaker" : "6.98",
          "File::Copy::Recursive" : "0.38",
          "File::Spec" : "3.49",

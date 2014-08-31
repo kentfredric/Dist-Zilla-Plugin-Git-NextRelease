@@ -87,6 +87,7 @@ do { my $x = {
                                    },
                    'requires' => {
                                    'Cwd' => '0',
+                                   'Dist::Zilla::Util::Test::KENTNL' => '1.003001',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Copy::Recursive' => '0',
                                    'File::Spec' => '0',

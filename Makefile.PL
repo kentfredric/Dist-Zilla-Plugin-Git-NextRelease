@@ -32,6 +32,7 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Cwd" => 0,
+    "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
     "ExtUtils::MakeMaker" => 0,
     "File::Copy::Recursive" => 0,
     "File::Spec" => 0,
@@ -55,6 +56,7 @@ my %FallbackPrereqs = (
   "DateTime" => 0,
   "Dist::Zilla" => "5.000",
   "Dist::Zilla::Plugin::NextRelease" => 0,
+  "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
   "ExtUtils::MakeMaker" => 0,
   "File::Copy::Recursive" => 0,
   "File::Spec" => 0,
