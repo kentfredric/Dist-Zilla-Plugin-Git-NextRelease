@@ -70,6 +70,7 @@ do { my $x = {
                                       'DateTime' => '0',
                                       'Dist::Zilla' => '5.000',
                                       'Dist::Zilla::Plugin::NextRelease' => '0',
+                                      'Dist::Zilla::Util::ConfigDumper' => '0',
                                       'Git::Wrapper::Plus' => '0.003100',
                                       'Moose' => '0',
                                       'String::Formatter' => '0.100680',

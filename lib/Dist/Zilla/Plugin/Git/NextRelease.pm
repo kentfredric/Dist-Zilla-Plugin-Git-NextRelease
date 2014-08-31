@@ -16,6 +16,7 @@ extends 'Dist::Zilla::Plugin::NextRelease';
 
 use Git::Wrapper::Plus 0.003100;    # Fixed shallow commits
 use DateTime;
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 use String::Formatter 0.100680 stringf => {
   -as => '_format_version',
@@ -84,6 +85,8 @@ has '_gwp' => (
   is         => ro =>,
   lazy_build => 1,
 );
+
+around dump_config => config_dumper( __PACKAGE__, { attrs => [ 'default_branch','branch' ]});
 
 sub _build__gwp {
   my ($self) = @_;
