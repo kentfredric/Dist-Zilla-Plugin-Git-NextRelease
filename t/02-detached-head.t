@@ -17,7 +17,8 @@ Example changes file
   First release
 EOF
 $test->add_file( 'dist.ini',
-  simple_ini( { version => '0.01' }, 'GatherDir', [ 'Git::NextRelease', { time_zone => 'UTC', default_branch => 'master' } ] ) );
+  simple_ini( { version => '0.01' }, ['GatherDir'], [ 'Git::NextRelease', { time_zone => 'UTC', default_branch => 'master' } ] )
+);
 $test->add_file( 'lib/E.pm', q[] );
 
 my $t = Git::Wrapper::Plus::Tester->new( repo_dir => $test->tempdir );
@@ -62,6 +63,7 @@ $t->run_env(
       next if $file->name ne 'Changes';
       like( $file->encoded_content, qr/0.01\s+2014-01-01\s+00:01:40/, "Specified commit timestamp in changelog" );
     }
+    note explain $test->builder->log_messages;
   }
 );
 done_testing;

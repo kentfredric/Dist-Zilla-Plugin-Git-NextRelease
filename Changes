@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
-0.003000 2014-08-31T20:39:11Z
+0.003000 2014-08-31T20:47:43Z
  [00 Minor]
  - Tests refactored
  - Add dump_config
