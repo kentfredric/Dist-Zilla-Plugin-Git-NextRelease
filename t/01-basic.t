@@ -2,25 +2,25 @@ use strict;
 use warnings;
 
 use Test::More;
-use Path::Tiny;
-use FindBin;
-use Cwd qw( cwd );
-use File::Copy::Recursive qw( rcopy );
 use Git::Wrapper::Plus::Tester;
 use Git::Wrapper::Plus::Support;
 
 use Test::Fatal;
-use Test::DZil;
+use Test::DZil qw( simple_ini );
+use Dist::Zilla::Util::Test::KENTNL 1.003001 qw( dztest );
 
-my $dist   = 'fake_dist_01';
-my $source = path($FindBin::Bin)->parent()->child('corpus')->child($dist);
+my $test = dztest();
+$test->add_file( 'Changes', <<'EOF');
+Example changes file
 
-my $t = Git::Wrapper::Plus::Tester->new();
+{{$NEXT}}
+  First release
+EOF
+$test->add_file( 'dist.ini', simple_ini( { version => '0.01' }, 'GatherDir', [ 'Git::NextRelease', { time_zone => 'UTC' } ] ) );
+$test->add_file( 'lib/E.pm', q[] );
+
+my $t = Git::Wrapper::Plus::Tester->new( repo_dir => $test->tempdir );
 my $s = Git::Wrapper::Plus::Support->new( git => $t->git );
-
-my $tempdir = $t->repo_dir;
-
-rcopy( "$source", "$tempdir" );
 
 $t->run_env(
   sub {
@@ -41,26 +41,12 @@ $t->run_env(
     is( $excp, undef, 'Git::Wrapper test preparation did not fail' )
       or diag $excp;
 
-    my $dist_ini = $tempdir->child('dist.ini');
-    BAIL_OUT("test setup failed to copy to tempdir")
-      if not -e $dist_ini and -f $dist_ini;
-
-    my $conf;
-    is(
-      exception {
-
-        $conf = Builder->from_config( { dist_root => "$tempdir" } );
-        $conf->build;
-
-      },
-      undef,
-      "dzil build ran ok"
-    );
-    for my $file ( @{ $conf->files } ) {
+    $test->build_ok;
+    for my $file ( @{ $test->builder->files } ) {
       next if $file->name ne 'Changes';
       like( $file->encoded_content, qr/0.01\s+2014-01-01\s+00:00:00/, "Specified commit timestamp in changelog" );
     }
+    note explain $test->builder->log_messages;
   }
 );
 done_testing;
-
