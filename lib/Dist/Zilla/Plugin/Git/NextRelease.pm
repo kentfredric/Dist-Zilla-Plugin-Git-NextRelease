@@ -5,17 +5,18 @@ use utf8;
 
 package Dist::Zilla::Plugin::Git::NextRelease;
 
-our $VERSION = '0.002012';
+our $VERSION = '0.003000';
 
 # ABSTRACT: Use time-stamp from Git instead of process start time.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Moose qw( extends has );
+use Moose qw( extends has around );
 extends 'Dist::Zilla::Plugin::NextRelease';
 
 use Git::Wrapper::Plus 0.003100;    # Fixed shallow commits
 use DateTime;
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 use String::Formatter 0.100680 stringf => {
   -as => '_format_version',
@@ -85,6 +86,8 @@ has '_gwp' => (
   lazy_build => 1,
 );
 
+around dump_config => config_dumper( __PACKAGE__, { attrs => [ 'default_branch', 'branch' ] } );
+
 sub _build__gwp {
   my ($self) = @_;
   return Git::Wrapper::Plus->new( q[] . $self->zilla->root );
@@ -153,7 +156,7 @@ Dist::Zilla::Plugin::Git::NextRelease - Use time-stamp from Git instead of proce
 
 =head1 VERSION
 
-version 0.002012
+version 0.003000
 
 =head1 SYNOPSIS
 
@@ -205,7 +208,7 @@ specifying this value means that on a detached head, the stated branch will be u
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -3,7 +3,7 @@ NAME
     of process start time.
 
 VERSION
-    version 0.002012
+    version 0.003000
 
 SYNOPSIS
     This module acts as a moderately thin wrapper to "[NextRelease]" so that
@@ -54,7 +54,7 @@ ATTRIBUTES
     instead.
 
 AUTHOR
-    Kent Fredric <kentfredric@gmail.com>
+    Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2014 by Kent Fredric

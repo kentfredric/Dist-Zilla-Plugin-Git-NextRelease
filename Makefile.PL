@@ -11,7 +11,7 @@ use ExtUtils::MakeMaker ;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Use time-stamp from Git instead of process start time.",
-  "AUTHOR" => "Kent Fredric <kentfredric\@gmail.com>",
+  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
@@ -23,6 +23,7 @@ my %WriteMakefileArgs = (
     "DateTime" => 0,
     "Dist::Zilla" => "5.000",
     "Dist::Zilla::Plugin::NextRelease" => 0,
+    "Dist::Zilla::Util::ConfigDumper" => 0,
     "Git::Wrapper::Plus" => "0.003100",
     "Moose" => 0,
     "String::Formatter" => "0.100680",
@@ -31,19 +32,16 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
-    "Cwd" => 0,
+    "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
     "ExtUtils::MakeMaker" => 0,
-    "File::Copy::Recursive" => 0,
     "File::Spec" => 0,
-    "FindBin" => 0,
     "Git::Wrapper::Plus::Support" => 0,
     "Git::Wrapper::Plus::Tester" => 0,
-    "Path::Tiny" => 0,
     "Test::DZil" => 0,
     "Test::Fatal" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "0.002012",
+  "VERSION" => "0.003000",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -51,19 +49,17 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "Cwd" => 0,
   "DateTime" => 0,
   "Dist::Zilla" => "5.000",
   "Dist::Zilla::Plugin::NextRelease" => 0,
+  "Dist::Zilla::Util::ConfigDumper" => 0,
+  "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
   "ExtUtils::MakeMaker" => 0,
-  "File::Copy::Recursive" => 0,
   "File::Spec" => 0,
-  "FindBin" => 0,
   "Git::Wrapper::Plus" => "0.003100",
   "Git::Wrapper::Plus::Support" => 0,
   "Git::Wrapper::Plus::Tester" => 0,
   "Moose" => 0,
-  "Path::Tiny" => 0,
   "String::Formatter" => "0.100680",
   "Test::DZil" => 0,
   "Test::Fatal" => 0,
