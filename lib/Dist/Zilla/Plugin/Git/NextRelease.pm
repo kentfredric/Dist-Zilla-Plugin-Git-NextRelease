@@ -40,6 +40,8 @@ use String::Formatter 0.100680 stringf => {
     V => sub {
       $_[0]->zilla->version . ( $_[0]->zilla->is_trial ? ( defined $_[1] ? $_[1] : '-TRIAL' ) : q[] );
     },
+    'H' => sub { $_[0]->_git_sha1 },
+    'h' => sub { $_[0]->_git_sha1_abbrev },
   },
 };
 
@@ -110,13 +112,38 @@ sub _build_branch {
   return $cb->name;
 }
 
-sub _build__git_timestamp {
+has '_branch_object'   => ( is => ro =>, init_arg => undef, lazy_build => 1 );
+has '_branch_commit'   => ( is => ro =>, init_arg => undef, lazy_build => 1 );
+has '_git_sha1'        => ( is => ro =>, init_arg => undef, lazy_build => 1 );
+has '_git_sha1_abbrev' => ( is => ro =>, init_arg => undef, lazy_build => 1 );
+
+sub _build__branch_object {
   my ($self) = @_;
   my ( $branch, ) = $self->_gwp->branches->get_branch( $self->branch );
   if ( not $branch ) {
     $self->log_fatal( [ q[Branch %s does not exist], $self->branch ] );
   }
-  my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } $self->_gwp->git->cat_file( 'commit', $branch->sha1 );
+  return $branch;
+}
+
+sub _build__git_sha1 {
+  my ($self) = @_;
+  return $self->_branch_object->sha1;
+}
+
+sub _build__git_sha1_abbrev {
+  my ($self) = @_;
+  return substr $self->_git_sha1, 0, 7;
+}
+
+sub _build__branch_commit {
+  my ($self) = @_;
+  return [ $self->_gwp->git->cat_file( 'commit', $self->_git_sha1 ) ];
+}
+
+sub _build__git_timestamp {
+  my ($self) = @_;
+  my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } @{ $self->_branch_commit };
   chomp $committer;
   ## no critic ( Compatibility::PerlMinimumVersionAndWhy )
   if ( $committer =~ qr/\s+(\d+)\s+(\S+)\z/msx ) {
