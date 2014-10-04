@@ -196,4 +196,18 @@ a commit series for both releases, and builds of all changes/commits in order to
 because testing a build branch is substantially faster than testing a master that requires C<Dist::Zilla>, especially if you're
 doing "Fresh install" testing like I am. )
 
+=head1 FORMATS
+
+C<[Git::NextRelease]> enhances and adds a few features of C<[NextRelease]>
+
+=over 4
+
+=item * C<%d> - A CLDR formatter of the C<branch>'s C<HEAD> timestamp. ( Original uses simply C<now> )
+
+=item * C<%H> - The SHA1 of C<branch>'s C<HEAD>
+
+=item * C<%h> - The SHA1 of C<branch>'s C<HEAD> shortened to 7 characters.
+
+=back
+
 =cut
