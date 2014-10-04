@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Git::NextRelease;
 
-our $VERSION = '0.004000';
+our $VERSION = '0.004001';
 
 # ABSTRACT: Use time-stamp from Git instead of process start time.
 
