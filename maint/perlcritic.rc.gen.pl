@@ -20,7 +20,7 @@ $bundle->configure;
 
 my @stopwords = (
   qw(
-  CLDR timestamp SHA formatter
+    CLDR timestamp SHA formatter
     )
 );
 for my $wordlist (@stopwords) {

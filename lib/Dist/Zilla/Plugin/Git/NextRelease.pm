@@ -143,7 +143,7 @@ sub _build__branch_commit {
 
 sub _build__git_timestamp {
   my ($self) = @_;
-  my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } @{ $self->_branch_commit };
+  my ( $committer, ) = grep { /\Acommitter /msx } @{ $self->_branch_commit };
   chomp $committer;
   ## no critic ( Compatibility::PerlMinimumVersionAndWhy )
   if ( $committer =~ qr/\s+(\d+)\s+(\S+)\z/msx ) {
