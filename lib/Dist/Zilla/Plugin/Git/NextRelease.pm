@@ -233,6 +233,20 @@ If you want being on a branch to always resolve to that branch,
 but you still want a useful behavior when on a detached head,
 specifying this value means that on a detached head, the stated branch will be used instead.
 
+=head1 FORMATS
+
+C<[Git::NextRelease]> enhances and adds a few features of C<[NextRelease]>
+
+=over 4
+
+=item * C<%d> - A CLDR formatter of the C<branch>'s C<HEAD> timestamp. ( Original uses simply C<now> )
+
+=item * C<%H> - The SHA1 of C<branch>'s C<HEAD>
+
+=item * C<%h> - The SHA1 of C<branch>'s C<HEAD> shortened to 7 characters.
+
+=back
+
 =head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
