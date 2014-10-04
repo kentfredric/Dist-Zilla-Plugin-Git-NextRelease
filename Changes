@@ -1,5 +1,14 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
+0.004000 2014-10-04T01:35:02Z @8dca09d
+ [Dependencies::Stats]
+ - Dependencies changed since 0.003000, see misc/*.deps* for details
+ - develop: (suggests: ↑1)
+ - test: (recommends: ↑1)
+
+ [Features]
+ - Added new format tokens %H and %h that refer to SHA1 and SHA1-abbrev of branch's head commmit.
+
 0.003000 2014-08-31T20:47:43Z
  [00 Minor]
  - Tests refactored

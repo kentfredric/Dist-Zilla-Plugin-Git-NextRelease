@@ -3,7 +3,7 @@ NAME
     of process start time.
 
 VERSION
-    version 0.003000
+    version 0.004000
 
 SYNOPSIS
     This module acts as a moderately thin wrapper to "[NextRelease]" so that
@@ -52,6 +52,16 @@ ATTRIBUTES
     still want a useful behavior when on a detached head, specifying this
     value means that on a detached head, the stated branch will be used
     instead.
+
+FORMATS
+    "[Git::NextRelease]" enhances and adds a few features of "[NextRelease]"
+
+    *   %d - A CLDR formatter of the "branch"'s "HEAD" timestamp. ( Original
+        uses simply "now" )
+
+    *   %H - The SHA1 of "branch"'s "HEAD"
+
+    *   %h - The SHA1 of "branch"'s "HEAD" shortened to 7 characters.
 
 AUTHOR
     Kent Fredric <kentnl@cpan.org>

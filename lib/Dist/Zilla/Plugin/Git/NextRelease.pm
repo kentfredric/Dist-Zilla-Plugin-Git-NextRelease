@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::Git::NextRelease;
 
-our $VERSION = '0.003000';
+our $VERSION = '0.004000';
 
 # ABSTRACT: Use time-stamp from Git instead of process start time.
 
@@ -40,6 +40,8 @@ use String::Formatter 0.100680 stringf => {
     V => sub {
       $_[0]->zilla->version . ( $_[0]->zilla->is_trial ? ( defined $_[1] ? $_[1] : '-TRIAL' ) : q[] );
     },
+    'H' => sub { $_[0]->_git_sha1 },
+    'h' => sub { $_[0]->_git_sha1_abbrev },
   },
 };
 
@@ -110,13 +112,38 @@ sub _build_branch {
   return $cb->name;
 }
 
-sub _build__git_timestamp {
+has '_branch_object'   => ( is => ro =>, init_arg => undef, lazy_build => 1 );
+has '_branch_commit'   => ( is => ro =>, init_arg => undef, lazy_build => 1 );
+has '_git_sha1'        => ( is => ro =>, init_arg => undef, lazy_build => 1 );
+has '_git_sha1_abbrev' => ( is => ro =>, init_arg => undef, lazy_build => 1 );
+
+sub _build__branch_object {
   my ($self) = @_;
   my ( $branch, ) = $self->_gwp->branches->get_branch( $self->branch );
   if ( not $branch ) {
     $self->log_fatal( [ q[Branch %s does not exist], $self->branch ] );
   }
-  my ( $committer, ) = grep { $_ =~ /\Acommitter /msx } $self->_gwp->git->cat_file( 'commit', $branch->sha1 );
+  return $branch;
+}
+
+sub _build__git_sha1 {
+  my ($self) = @_;
+  return $self->_branch_object->sha1;
+}
+
+sub _build__git_sha1_abbrev {
+  my ($self) = @_;
+  return substr $self->_git_sha1, 0, 7;
+}
+
+sub _build__branch_commit {
+  my ($self) = @_;
+  return [ $self->_gwp->git->cat_file( 'commit', $self->_git_sha1 ) ];
+}
+
+sub _build__git_timestamp {
+  my ($self) = @_;
+  my ( $committer, ) = grep { /\Acommitter /msx } @{ $self->_branch_commit };
   chomp $committer;
   ## no critic ( Compatibility::PerlMinimumVersionAndWhy )
   if ( $committer =~ qr/\s+(\d+)\s+(\S+)\z/msx ) {
@@ -156,7 +183,7 @@ Dist::Zilla::Plugin::Git::NextRelease - Use time-stamp from Git instead of proce
 
 =head1 VERSION
 
-version 0.003000
+version 0.004000
 
 =head1 SYNOPSIS
 
@@ -205,6 +232,20 @@ Default value is resolved from determining "current" branch.
 If you want being on a branch to always resolve to that branch,
 but you still want a useful behavior when on a detached head,
 specifying this value means that on a detached head, the stated branch will be used instead.
+
+=head1 FORMATS
+
+C<[Git::NextRelease]> enhances and adds a few features of C<[NextRelease]>
+
+=over 4
+
+=item * C<%d> - A CLDR formatter of the C<branch>'s C<HEAD> timestamp. ( Original uses simply C<now> )
+
+=item * C<%H> - The SHA1 of C<branch>'s C<HEAD>
+
+=item * C<%h> - The SHA1 of C<branch>'s C<HEAD> shortened to 7 characters.
+
+=back
 
 =head1 AUTHOR
 
