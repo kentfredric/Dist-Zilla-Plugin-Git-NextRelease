@@ -148,6 +148,8 @@ stop_words = CLDR timestamp SHA formatter
 
 [Documentation::RequireEndBeforeLastPod]
 
+[Documentation::RequireFilenameMarkup]
+
 [Documentation::RequireFinalCut]
 
 [Documentation::RequireLinkedURLs]
