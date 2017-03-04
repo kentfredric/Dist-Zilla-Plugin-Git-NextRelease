@@ -1,6 +1,16 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+ [Bugfix]
+ - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot
+ - Closes https://github.com/kentnl/Dist-Zilla-Plugin-Git-NextRelease/issues/1
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.004000, see misc/*.deps* for details
+ - configure: +1 (recommends: ↑1)
+ - develop: +14 ↑4 -3 (recommends: +1, suggests: ↑2)
+ - runtime: (recommends: +1)
+ - test: +1 ↓1 (recommends: ↑1 ↓1)
 
 0.004000 2014-10-04T01:35:02Z @8dca09d
  [Dependencies::Stats]
@@ -105,4 +115,3 @@ Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 0.001000 2014-01-12T01:21:35Z
  - First version.
-
