@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
 {{$NEXT}}
+
+0.004001 2017-03-04T01:45:51Z 15d19c3
  [Bugfix]
  - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot
  - Closes https://github.com/kentnl/Dist-Zilla-Plugin-Git-NextRelease/issues/1
