@@ -25,7 +25,7 @@ name: Dist-Zilla-Plugin-Git-NextRelease
 provides:
   Dist::Zilla::Plugin::Git::NextRelease:
     file: lib/Dist/Zilla/Plugin/Git/NextRelease.pm
-    version: '0.004001'
+    version: '0.004002'
 recommends:
   Moose: '2.000'
 requires:
@@ -44,4 +44,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-Git-NextRelease/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-Git-NextRelease
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-Git-NextRelease.git
-version: '0.004001'
+version: '0.004002'

@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Plugin-Git-NextRelease
 
+0.004002 2017-03-04T02:18:18Z c39216a
+
 0.004001 2017-03-04T01:45:51Z 15d19c3
  [Bugfix]
  - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot
